@@ -19,7 +19,7 @@ function App() {
   const [toUnit, setToUnit] = useState('fahrenheit');
   const [convResult, setConvResult] = useState('');
 
-  const API_URL = 'http://localhost:5000';
+  const API_URL = process.env.REACT_APP_API_URL || 'https://ez-utility-backend.onrender.com';
 
   const handleUrlShorten = async () => {
     if (!longUrl) return;
