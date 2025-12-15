@@ -7,7 +7,10 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://ez-utility.vercel.app/', 'http://localhost:3000'],
+  credentials: true
+}));
 app.use(express.json());
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ez-utility';
